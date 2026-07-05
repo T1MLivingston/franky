@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Franky's Wetland Word Search</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='55' r='42' fill='%234ED341'/%3E%3Ccircle cx='34' cy='38' r='11' fill='%23fff'/%3E%3Ccircle cx='30' cy='38' r='6' fill='%23111'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="pond-bg" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="mascot" aria-hidden="true">
+        <svg viewBox="0 0 200 200" class="franky-svg">
+          <ellipse cx="100" cy="120" rx="88" ry="70" fill="#4ED341"/>
+          <path d="M20 90 Q10 40 55 30 Q40 55 45 85 Z" fill="#3fc231"/>
+          <path d="M180 90 Q190 40 145 30 Q160 55 155 85 Z" fill="#3fc231"/>
+          <circle cx="60" cy="70" r="26" fill="#4ED341"/>
+          <circle cx="52" cy="62" r="15" fill="#FFF9EC"/>
+          <circle cx="46" cy="64" r="8" fill="#161311"/>
+          <circle cx="49" cy="61" r="2.4" fill="#fff"/>
+          <path d="M30 92 Q60 112 96 94" stroke="#161311" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M30 92 Q60 118 96 94 Q90 108 60 110 Q38 108 30 92Z" fill="#FF8E23"/>
+          <ellipse cx="100" cy="150" rx="55" ry="38" fill="#FFAA3B"/>
+          <path d="M60 118 Q100 100 140 118 L140 145 Q100 165 60 145 Z" fill="#41A2EE"/>
+          <ellipse cx="30" cy="150" rx="16" ry="11" fill="#EA401E"/>
+          <ellipse cx="170" cy="150" rx="16" ry="11" fill="#EA401E"/>
+        </svg>
+      </div>
+      <div class="title-block">
+        <h1>Wetland Inhabitant<span>Word Search</span></h1>
+        <p class="subtitle">Search for the types of animals found in wetlands, with Franky the Frog!</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="puzzle-panel" aria-label="Word search grid">
+      <div class="panel-head">
+        <h2>Find the hidden words</h2>
+        <button id="reset-btn" class="btn-reset" type="button">Reset</button>
+      </div>
+      <div id="grid" class="grid" role="grid" aria-label="Word search puzzle"></div>
+    </section>
+
+    <aside class="word-panel" aria-label="Word list">
+      <h2>Words to find</h2>
+      <ul id="word-list" class="word-list"></ul>
+      <div class="progress">
+        <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+        <span id="progress-label">0 / 18 found</span>
+      </div>
+    </aside>
+  </main>
+
+  <div id="win-banner" class="win-banner hidden" role="status">
+    <div class="win-card">
+      <div class="win-mascot" aria-hidden="true">
+        <svg viewBox="0 0 200 200" class="franky-svg">
+          <ellipse cx="100" cy="120" rx="88" ry="70" fill="#4ED341"/>
+          <circle cx="60" cy="70" r="26" fill="#4ED341"/>
+          <circle cx="52" cy="62" r="15" fill="#FFF9EC"/>
+          <circle cx="46" cy="64" r="8" fill="#161311"/>
+          <circle cx="49" cy="61" r="2.4" fill="#fff"/>
+          <path d="M30 92 Q60 118 96 94 Q90 108 60 110 Q38 108 30 92Z" fill="#FF8E23"/>
+          <ellipse cx="100" cy="150" rx="55" ry="38" fill="#FFAA3B"/>
+          <path d="M60 118 Q100 100 140 118 L140 145 Q100 165 60 145 Z" fill="#41A2EE"/>
+        </svg>
+      </div>
+      <h2>Ribbit-ing job!</h2>
+      <p>You found every wetland inhabitant.</p>
+      <button id="play-again-btn" class="btn-reset" type="button">Play again</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Made for Franky the Frog &middot; wetland word search</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
