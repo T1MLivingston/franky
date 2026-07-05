@@ -93,6 +93,7 @@ const subtitleEl = document.getElementById("subtitle-text");
 const bankSelectEl = document.getElementById("bank-select");
 const difficultyButtonsEl = document.getElementById("difficulty-buttons");
 const timerDisplayEl = document.getElementById("timer-display");
+const mascotFeedbackEl = document.getElementById("mascot-feedback");
 
 for (const [id, bank] of Object.entries(WORD_BANKS)) {
   const opt = document.createElement("option");
@@ -302,6 +303,19 @@ function markFound(word) {
   }
 }
 
+let missTimeout = null;
+
+function showMiss() {
+  mascotFeedbackEl.src = "franky_head_sad.png";
+  mascotFeedbackEl.classList.remove("miss");
+  void mascotFeedbackEl.offsetWidth;
+  mascotFeedbackEl.classList.add("miss");
+  clearTimeout(missTimeout);
+  missTimeout = setTimeout(() => {
+    mascotFeedbackEl.src = "frany_head_smile.png";
+  }, 900);
+}
+
 function finalizeSelection() {
   const coords = currentPath.map((el) => [Number(el.dataset.r), Number(el.dataset.c)]);
   clearSelecting();
@@ -314,6 +328,7 @@ function finalizeSelection() {
       return;
     }
   }
+  showMiss();
 }
 
 gridEl.addEventListener("pointerdown", (e) => {
@@ -382,6 +397,9 @@ function loadPuzzle(bankId, difficulty) {
   updateProgress();
   resetTimer();
   winBannerEl.classList.add("hidden");
+  clearTimeout(missTimeout);
+  mascotFeedbackEl.classList.remove("miss");
+  mascotFeedbackEl.src = "frany_head_smile.png";
 }
 
 document.getElementById("reset-btn").addEventListener("click", () => {

@@ -50,10 +50,20 @@ html, body {
 
 .mascot { flex: 0 0 auto; }
 
-.franky-svg {
-  width: 88px;
-  height: 88px;
+.franky-img {
+  display: block;
   filter: drop-shadow(0 6px 10px rgba(0,0,0,0.18));
+}
+
+.header-franky-img {
+  height: 110px;
+  width: auto;
+}
+
+.win-franky-img {
+  height: 110px;
+  width: auto;
+  margin: 0 auto 0.5rem;
 }
 
 .title-block h1 {
@@ -182,6 +192,29 @@ html, body {
   margin: 0;
   font-size: 1.1rem;
   color: var(--green-dark);
+}
+
+.panel-head-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.mascot-feedback {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  transition: transform 0.15s ease;
+}
+
+.mascot-feedback.miss {
+  animation: mascot-shake 0.5s ease;
+}
+
+@keyframes mascot-shake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-12deg); }
+  75% { transform: rotate(12deg); }
 }
 
 .btn-reset {
@@ -324,8 +357,6 @@ html, body {
   box-shadow: var(--shadow);
 }
 
-.win-mascot .franky-svg { width: 110px; height: 110px; margin-bottom: 0.5rem; }
-
 .win-card h2 { color: var(--green-dark); margin: 0.25rem 0; }
 .win-card p { color: #555; margin: 0 0 1rem; }
 
@@ -341,7 +372,7 @@ html, body {
     grid-template-columns: 1fr;
   }
   .header-inner { gap: 0.85rem; }
-  .franky-svg { width: 64px; height: 64px; }
+  .header-franky-img { height: 72px; }
   .title-block h1 { font-size: 1.25rem; }
   .title-block h1 span { font-size: 1.45rem; }
   .controls-bar { gap: 0.75rem; }
