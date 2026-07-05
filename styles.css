@@ -56,7 +56,7 @@ html, body {
 }
 
 .header-franky-img {
-  height: 20px;
+  height: 32px;
   width: auto;
 }
 
@@ -194,13 +194,19 @@ html, body {
   color: var(--green-dark);
 }
 
-.panel-head-title {
+.panel-head-title,
+.word-panel-title {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.mascot-feedback {
+.word-panel-title {
+  margin-bottom: 0.75rem;
+}
+
+.mascot-feedback,
+.word-panel-icon {
   display: block;
   width: 20px;
   height: 20px;
@@ -373,7 +379,7 @@ html, body {
     grid-template-columns: 1fr;
   }
   .header-inner { gap: 0.85rem; }
-  .header-franky-img { height: 16px; }
+  .header-franky-img { height: 26px; }
   .title-block h1 { font-size: 1.25rem; }
   .title-block h1 span { font-size: 1.45rem; }
   .controls-bar { gap: 0.75rem; }
