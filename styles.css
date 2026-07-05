@@ -79,9 +79,83 @@ html, body {
   max-width: 40ch;
 }
 
+.controls-bar {
+  max-width: 1000px;
+  margin: 1.25rem auto 0;
+  padding: 0 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.control-group label,
+.control-label {
+  white-space: nowrap;
+}
+
+#bank-select {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid #dfe8d5;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+
+.difficulty-buttons {
+  display: flex;
+  gap: 0.4rem;
+  background: #eef3e6;
+  padding: 0.25rem;
+  border-radius: 999px;
+}
+
+.difficulty-buttons button {
+  border: none;
+  background: transparent;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--green-dark);
+  cursor: pointer;
+}
+
+.difficulty-buttons button.active {
+  background: var(--green);
+  color: #fff;
+}
+
+.timer-badge {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--tan);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-variant-numeric: tabular-nums;
+}
+
 .layout {
   max-width: 1000px;
-  margin: 1.5rem auto 2.5rem;
+  margin: 1.25rem auto 2.5rem;
   padding: 0 1.25rem;
   display: grid;
   grid-template-columns: 1fr 280px;
@@ -142,7 +216,7 @@ html, body {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: clamp(0.55rem, 1.6vw, 1.05rem);
+  font-size: var(--cell-font, clamp(0.55rem, 1.6vw, 1.05rem));
   background: #fff;
   border-radius: 4px;
   color: var(--ink);
@@ -270,4 +344,6 @@ html, body {
   .franky-svg { width: 64px; height: 64px; }
   .title-block h1 { font-size: 1.25rem; }
   .title-block h1 span { font-size: 1.45rem; }
+  .controls-bar { gap: 0.75rem; }
+  .timer-badge { margin-left: 0; }
 }

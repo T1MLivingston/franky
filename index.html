@@ -30,29 +30,50 @@
         </svg>
       </div>
       <div class="title-block">
-        <h1>Wetland Inhabitant<span>Word Search</span></h1>
-        <p class="subtitle">Search for the types of animals found in wetlands, with Franky the Frog!</p>
+        <h1 id="title-main">Wetland Inhabitant<span id="title-sub">Word Search</span></h1>
+        <p class="subtitle" id="subtitle-text">Search for the types of animals found in wetlands, with Franky the Frog!</p>
       </div>
     </div>
   </header>
 
-  <main class="layout">
-    <section class="puzzle-panel" aria-label="Word search grid">
-      <div class="panel-head">
-        <h2>Find the hidden words</h2>
-        <button id="reset-btn" class="btn-reset" type="button">Reset</button>
+  <main>
+    <div class="controls-bar">
+      <div class="control-group">
+        <label for="bank-select">Word bank</label>
+        <select id="bank-select"></select>
       </div>
-      <div id="grid" class="grid" role="grid" aria-label="Word search puzzle"></div>
-    </section>
+      <div class="control-group">
+        <span class="control-label">Difficulty</span>
+        <div class="difficulty-buttons" id="difficulty-buttons" role="group" aria-label="Difficulty">
+          <button data-difficulty="easy" type="button">Easy</button>
+          <button data-difficulty="medium" type="button">Medium</button>
+          <button data-difficulty="hard" type="button">Hard</button>
+        </div>
+      </div>
+      <div class="timer-badge">
+        <span aria-hidden="true">⏱</span>
+        <span id="timer-display">00:00</span>
+      </div>
+    </div>
 
-    <aside class="word-panel" aria-label="Word list">
-      <h2>Words to find</h2>
-      <ul id="word-list" class="word-list"></ul>
-      <div class="progress">
-        <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
-        <span id="progress-label">0 / 18 found</span>
-      </div>
-    </aside>
+    <div class="layout">
+      <section class="puzzle-panel" aria-label="Word search grid">
+        <div class="panel-head">
+          <h2>Find the hidden words</h2>
+          <button id="reset-btn" class="btn-reset" type="button">New puzzle</button>
+        </div>
+        <div id="grid" class="grid" role="grid" aria-label="Word search puzzle"></div>
+      </section>
+
+      <aside class="word-panel" aria-label="Word list">
+        <h2>Words to find</h2>
+        <ul id="word-list" class="word-list"></ul>
+        <div class="progress">
+          <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+          <span id="progress-label">0 / 0 found</span>
+        </div>
+      </aside>
+    </div>
   </main>
 
   <div id="win-banner" class="win-banner hidden" role="status">
@@ -70,7 +91,7 @@
         </svg>
       </div>
       <h2>Ribbit-ing job!</h2>
-      <p>You found every wetland inhabitant.</p>
+      <p id="win-message">You found every word.</p>
       <button id="play-again-btn" class="btn-reset" type="button">Play again</button>
     </div>
   </div>
